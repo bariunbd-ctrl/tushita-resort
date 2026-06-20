@@ -1,33 +1,28 @@
-// Auth service — development mode (hardcoded credentials).
-// Production: replace with Supabase Auth (see FUTURE_INTEGRATION_NOTES).
+import { supabase } from './supabaseClient.js';
 
-import { localAdapter } from './adapters/localAdapter.js';
-
-const adapter = localAdapter;
-const AUTH_KEY = 'auth';
-
-const DEV_USER = 'admin';
-const DEV_PASS = 'admin123';
-
-export function login(username, password) {
-  if (username === DEV_USER && password === DEV_PASS) {
-    adapter.set(AUTH_KEY, { user: 'admin', token: 'dev-token' });
-    return { success: true };
+export async function login(email, password) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+  if (error) {
+    return { success: false, error: 'Нэвтрэх нэр эсвэл нууц үг буруу' };
   }
-  return { success: false, error: 'Нэвтрэх нэр эсвэл нууц үг буруу' };
+  return { success: true, user: data.user };
 }
 
-export function logout() {
-  adapter.remove(AUTH_KEY);
+export async function logout() {
+  await supabase.auth.signOut();
 }
 
-export function getCurrentUser() {
-  const auth = adapter.get(AUTH_KEY);
-  return auth?.user ? auth : null;
+export async function getCurrentUser() {
+  const { data } = await supabase.auth.getUser();
+  return data?.user || null;
 }
 
-export function isAuthenticated() {
-  return getCurrentUser() !== null;
+export async function isAuthenticated() {
+  const { data } = await supabase.auth.getSession();
+  return !!data.session;
 }
 
 export default { login, logout, getCurrentUser, isAuthenticated };

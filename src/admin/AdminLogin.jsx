@@ -11,13 +11,15 @@ export default function AdminLogin() {
 
   // Already logged in -> go to dashboard
   React.useEffect(() => {
-    if (isAuthenticated()) navigate('/admin/dashboard', { replace: true });
+    isAuthenticated().then(auth => {
+      if (auth) navigate('/admin/dashboard', { replace: true });
+    });
   }, [navigate]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    const result = login(username.trim(), password);
+    const result = await login(username.trim(), password);
     if (result.success) {
       navigate('/admin/dashboard', { replace: true });
     } else {
@@ -41,16 +43,17 @@ export default function AdminLogin() {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-sm font-semibold text-gray-700 mb-1">
-              Нэвтрэх нэр
-            </label>
-            <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className={inputClass}
-              placeholder="admin"
-              autoFocus
-            />
+          <label className="block text-sm font-semibold text-gray-700 mb-1">
+            Имэйл
+          </label>
+          <input
+            type="email"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className={inputClass}
+            placeholder="таны@email.com"
+            autoFocus
+          />
           </div>
           <div className="mb-4">
             <label className="block text-sm font-semibold text-gray-700 mb-1">Нууц үг</label>
