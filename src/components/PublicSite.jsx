@@ -46,19 +46,18 @@ export default function PublicSite() {
       <Header siteName={content.general?.siteName} logoPath={content.general?.logoPath} />
       <main>
         <Hero hero={content.hero} general={content.general} />
-        <About about={content.about} />
-        <WhyUs whyUs={content.whyUs} />
-        <Services services={content.services} />
-        <Programs programs={content.programs} />
-        <Rooms rooms={content.rooms} />
-        <Prices prices={content.prices} />
-        <NatureGallery nature={content.nature} />
-        <Reviews reviews={content.reviews} />
-        <Faq faq={content.faq} />
-        <Location location={content.location} />
-        <Contact contact={content.contact} programs={content.programs} />
+        <About about={content.about} titles={content.sectionTitles} />
+        <WhyUs whyUs={content.whyUs} socialProof={content.socialProof} titles={content.sectionTitles} />
+        <Services services={content.services} titles={content.sectionTitles} />
+        <Programs programs={content.programs} titles={content.sectionTitles} />
+        <Rooms rooms={content.rooms} titles={content.sectionTitles} />
+        <Prices prices={content.prices} pricesSubtitle={content.pricesSubtitle} titles={content.sectionTitles} />
+        <NatureGallery nature={content.nature} titles={content.sectionTitles} />
+        <Reviews reviews={content.reviews} titles={content.sectionTitles} />
+        <Location location={content.location} titles={content.sectionTitles} />
+        <Contact contact={content.contact} programs={content.programs} titles={content.sectionTitles} />
       </main>
-      <Footer general={content.general} contact={content.contact} social={content.social} />
+      <Footer general={content.general} contact={content.contact} social={content.social} titles={content.sectionTitles} />
     </div>
   );
 }

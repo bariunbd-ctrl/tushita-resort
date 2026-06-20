@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Settings, Image as ImageIcon, Info, TreePine,
-  Wrench, Tag, MapPin, Phone, Share2, Inbox, BarChart3, LogOut, Mountain, Sparkles, X, HelpCircle,
+  Wrench, Tag, MapPin, Phone, Share2, Inbox, BarChart3, LogOut, Mountain, Sparkles, X, HelpCircle, Trophy, Type
 } from 'lucide-react';
 import { logout } from '../services/authService.js';
 
@@ -17,11 +17,13 @@ const MENU = [
   { path: '/admin/location', label: 'Байршил', icon: MapPin },
   { path: '/admin/contact', label: 'Холбоо барих', icon: Phone },
   { path: '/admin/whyus', label: 'Танин мэдэхүйн мэдээлэл', icon: Sparkles },
+  { path: '/admin/socialproof', label: 'Social Proof карточк', icon: Trophy },
   { path: '/admin/faq', label: 'Түгээмэл асуулт', icon: HelpCircle },
   { path: '/admin/social', label: 'Social links', icon: Share2 },
   { path: '/admin/submissions', label: 'Ирсэн хүсэлтүүд', icon: Inbox },
   { path: '/admin/analytics', label: 'Статистик', icon: BarChart3 },
-  ];
+  { path: '/admin/titles', label: 'Section гарчгууд', icon: Type },
+    ];
 
 export default function AdminSidebar({ open, onClose }) {
   const navigate = useNavigate();

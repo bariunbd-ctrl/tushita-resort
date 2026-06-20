@@ -11,7 +11,7 @@ export const defaultContent = {
       "mn": "Бясалгал • Урлал • Байгаль — Сэтгэлийн эрч хүчийг мэдэр",
       "en": "Meditation • Art • Nature — Renewal of the Soul"
     },
-    "logoPath": ""
+    "logoPath": "/images/logo.jpg"
   },
   "hero": {
     "headline": {
@@ -22,13 +22,16 @@ export const defaultContent = {
       "mn": "Таны аялал нь зөвхөн амралт бус, харин таны сэтгэлийг анагааж, эрч хүчээр цэнэглэх бяцхан \"диваажин\" байх болно. Бид таныг цэвэр, тохилог орчинд найрсаг үйлчилгээтэйгээр хүлээн авахад үргэлж бэлэн байна🤍",
       "en": "Your trip will not only be a vacation, but also a little \"paradise\" that will heal your soul and recharge your energy. We are always ready to welcome you in a clean and comfortable environment with friendly service. 🤍"
     },
-    "backgroundPath": ""
+    "backgroundPath": "/images/Hero.jpg"
   },
   "about": {
     "text": {
       "mn": "Тэнгэрт сар, од мишээх энэ л агшинд хотын чимээ шуугианаас холдон, \"Түшита Буддист Кэмп\"-д сэтгэлээ амрааж, өөртэйгөө ярилцах ховорхон боломж таныг хүлээж байна. Таны амралт зөвхөн аялал биш, харин сэтгэлээ амрааж, эрч хүчээ сэлбэх онцгой мэдрэмж байх болно... Бидний амьдарч буй энэ ертөнцийн чимээгүй, тайван сайхныг мэдрэхийг хүсвэл Цагаан сүмийн үзэсгэлэнт байгальд байрлах Бясалгал, урлант буддист амралтын газар тавтай морилно уу. Бид та бүхэнд Цагаан сүмийн байгалийн халуун рашаанд алжаалаа тайлах Йог, бясалгал хийж сэтгэлээ амгалантай байлгах Арт галерейгаар зочилж, оюуны таашаал авах Буддист хэв маягаар тохижуулсан тав тухтай монгол гэрүүдэд амарч, цэвэр агаараар цэнэглэгдэх Монголын уламжлалт цагаан идээ, амтат монгол хоолны дээж хүртэх Таны аялал нь зөвхөн амралт бус, харин таны сэтгэлийг анагааж, эрч хүчээр цэнэглэх бяцхан \"диваажин\" байх болно. Бид таныг цэвэр, тохилог орчинд найрсаг үйлчилгээтэйгээр хүлээн авахад үргэлж бэлэн байна",
       "en": "At this moment when the moon and stars are shining in the sky, a rare opportunity to relax and talk to yourself at \"Tushita Buddhist Camp\" awaits you, away from the hustle and bustle of the city. Your vacation will not only be a trip, but also a special feeling of relaxing your soul and recharging your energy... If you want to experience the silence and tranquility of this world we live in, welcome to the Meditation and Art Buddhist Resort located in the beautiful nature of Tsagaan Temple. We offer you: Relax in the natural hot springs of Tsagaan Temple, practice yoga and meditation to calm your mind, visit the Art Gallery and enjoy intellectual pleasure, relax in comfortable Mongolian homes decorated in Buddhist style, and recharge with fresh air, sample traditional Mongolian dairy products and delicious Mongolian cuisine. Your trip will not only be a vacation, but also a little \"paradise\" that will heal your soul and recharge your energy. We are always ready to welcome you in a clean and comfortable environment with friendly service"
     },
+    "visual1Path": "/images/about1.jpg",
+    "visual2Path": "/images/about2.jpg",
+    "visual3Path": "/images/about3.jpg",
     "advantages": [
       {
         "id": "adv1",
@@ -80,7 +83,33 @@ export const defaultContent = {
       }
     ]
   },
-  "whyUs": [
+  "socialProof": [
+  {
+    "id": "sp1",
+    "emoji": "🏆",
+    "mn": "Бясалгал, урлант буддист амралтын газар",
+    "en": "Meditation and art Buddhist retreat"
+  },
+  {
+    "id": "sp2",
+    "emoji": "🌿",
+    "mn": "Йог, бясалгал хийж сэтгэлээ амраах",
+    "en": "Relax your mind with yoga and meditation"
+  },
+  {
+    "id": "sp3",
+    "emoji": "👨‍🏫",
+    "mn": "Арт галерейгаар зочилж, оюуны таашаал авах",
+    "en": "Visit an art gallery and enjoy intellectual pleasures"
+  },
+  {
+    "id": "sp4",
+    "emoji": "📱",
+    "mn": "Байгалийн амар амгаланг, оюуны тайвширал",
+    "en": "The peace of nature, the peace of mind"
+    }
+  ],
+    "whyUs": [
     {
       "id": "why1",
       "icon": "Sparkles",
@@ -89,8 +118,8 @@ export const defaultContent = {
         "en": "Why retreat here?"
       },
       "answer": {
-        "mn": "Улаанбаатараас 3 цагийн зайд, 1,800м өндөрт орших нуурын эрэгт — агаар ариун, чимээ намуун, сэтгэл тайвширна.",
-        "en": "3 hours from Ulaanbaatar, at 1,800m beside a pristine lake — pure air, deep silence, and true peace."
+        "mn": "Улаанбаатараас 6 цагийн зайд, 1,800м өндөрт орших - цагаан сүмийн үзэсгэлэнт байгаль, нам гүм орчин",
+        "en": "6 hours from Ulaanbaatar, at an altitude of 1,800m - the beautiful scenery and quiet environment of Tsagaan Sum"
       }
     },
     {
@@ -101,8 +130,8 @@ export const defaultContent = {
         "en": "What to experience?"
       },
       "answer": {
-        "mn": "Нарны мандах бясалгал, нуурын эрэгт зургийн анги, буддист хурал, морин хуурын жүжиг, одны ажиглалт.",
-        "en": "Sunrise meditation, lakeside painting class, Buddhist ceremony, morin khuur performance, stargazing."
+        "mn": "Нарны мандахыг харах, бясалгал, арт урлан өөрийн бүтээлийг бүтээх, шөнийн одод",
+        "en": "Watching the sunrise, meditating, creating your own art, and watching the stars at night",
       }
     },
     {
@@ -167,13 +196,14 @@ export const defaultContent = {
   "rooms": [
     {
       "id": "room1",
+      "imagePath": "/images/room1.jpg",
       "name": {
         "mn": "Бясалгалын гэр",
         "en": "Meditation Ger"
       },
       "description": {
-        "mn": "Нуур харагдах байршилтай, 2 хүний уламжлалт монгол гэр",
-        "en": "Traditional Mongolian ger for 2 with lake view"
+        "mn": "Улсхарагдах байршилтай, 2 хүний уламжлалт монгол гэр",
+        "en": "Traditional Mongolian ger for 2 with Mountain view"
       },
       "price": 120000,
       "currency": "₮",
@@ -182,13 +212,13 @@ export const defaultContent = {
       "available": true,
       "amenities": {
         "mn": [
-          "Нуурын харагдац",
+          "Уулсын харагдац",
           "Дулаалгатай",
           "Цай/кофе",
           "Өглөөний цай"
         ],
         "en": [
-          "Lake view",
+          "Mountain view",
           "Heated",
           "Tea/Coffee",
           "Breakfast included"
@@ -197,6 +227,7 @@ export const defaultContent = {
     },
     {
       "id": "room2",
+      "imagePath": "/images/room2.jpg",
       "name": {
         "mn": "Урлалын студи гэр",
         "en": "Art Studio Ger"
@@ -227,13 +258,14 @@ export const defaultContent = {
     },
     {
       "id": "room3",
+      "imagePath": "/images/room3.jpg",
       "name": {
         "mn": "VIP Ламын байр",
         "en": "VIP Lama Suite"
       },
       "description": {
-        "mn": "Тусдаа угаалгуур, нуурын панорам харагдацтай, 2 хүн",
-        "en": "Private bathroom, panoramic lake view, 2 guests"
+        "mn": "Тусдаа угаалтуур,байгалийн панорам харагдацтай, 2 хүн",
+        "en": "Separate sink, panoramic view of nature, 2 people"
       },
       "price": 280000,
       "currency": "₮",
@@ -259,6 +291,7 @@ export const defaultContent = {
     },
     {
       "id": "room4",
+      "imagePath": "/images/room4.jpg",
       "name": {
         "mn": "Гэр бүлийн байшин",
         "en": "Family Cabin"
@@ -439,7 +472,7 @@ export const defaultContent = {
         "id": "info4",
         "icon": "Sun",
         "title": {
-          "mn": "Нарны мандаах ёслол",
+          "mn": "Нарны мандах ёслол",
           "en": "Sunrise Ceremony"
         },
         "description": {
@@ -475,7 +508,7 @@ export const defaultContent = {
     "gallery": [
       {
         "id": "g1",
-        "path": "",
+        "path": "/images/gallery1.jpg",
         "caption": {
           "mn": "Арт галерейгаар зочилж, оюуны таашаал авах",
           "en": "Visit an art gallery and enjoy the intellectual pleasures."
@@ -483,7 +516,7 @@ export const defaultContent = {
       },
       {
         "id": "g2",
-        "path": "",
+        "path": "/images/gallery2.jpg",
         "caption": {
           "mn": "🎨 Арт галерейгаар зочилон өөрийн бүтээлийг урлах",
           "en": "🎨 Visit an art gallery and create your own artwork"
@@ -491,7 +524,7 @@ export const defaultContent = {
       },
       {
         "id": "g3",
-        "path": "",
+        "path": "/images/gallery3.jpg",
         "caption": {
           "mn": "🧘 Йог, бясалгал хийж сэтгэлээ амраах",
           "en": "🧘 Relax your mind with yoga and meditation"
@@ -499,7 +532,7 @@ export const defaultContent = {
       },
       {
         "id": "g4",
-        "path": "",
+        "path": "/images/gallery4.jpg",
         "caption": {
           "mn": "Уламжлалт гэр",
           "en": "Traditional ger"
@@ -507,7 +540,7 @@ export const defaultContent = {
       },
       {
         "id": "g5",
-        "path": "",
+        "path": "/images/gallery5.jpg",
         "caption": {
           "mn": "Буддист ёслол",
           "en": "Buddhist ceremony"
@@ -515,7 +548,7 @@ export const defaultContent = {
       },
       {
         "id": "g6",
-        "path": "",
+        "path": "/images/gallery6.jpg",
         "caption": {
           "mn": "🥛Монголын уламжлалт цагаан идээ, амтат монгол хоолны дээж",
           "en": "🥛Samples of traditional Mongolian dairy products and delicious Mongolian cuisine"
@@ -523,7 +556,7 @@ export const defaultContent = {
       },
       {
         "id": "g7",
-        "path": "",
+        "path": "/images/gallery7.jpg",
         "caption": {
           "mn": "Байгалийн төгс зохицол",
           "en": "Perfect harmony of nature"
@@ -531,7 +564,7 @@ export const defaultContent = {
       },
       {
         "id": "g8",
-        "path": "",
+        "path": "/images/gallery8.jpg",
         "caption": {
           "mn": "Шөнийн одод болон нар мандах, жаргахыг толидох",
           "en": "Reflecting the stars at night and the sunrise and sunset"
@@ -748,6 +781,21 @@ export const defaultContent = {
   },
   "faq": [],
 
+  "sectionTitles": {
+  "heroSubtitle": { "mn": "Яагаад ТҮШИТА БУДДА КЭМП?", "en": "Why TUSHITA BUDDHA CAMP?" },
+  "aboutTitle": { "mn": "Зүгээр нэг амралт биш — сэтгэлийн аялал", "en": "Not just a retreat — a journey of the soul" },
+  "servicesTitle": { "mn": "Бүх зүйл нэг дор", "en": "Everything in one place" },
+  "programsTitle": { "mn": "Өөртөө тохирсон аялалаа сонго", "en": "Choose your perfect retreat journey" },
+  "roomsTitle": { "mn": "Тав тухтай байр сонго", "en": "Choose your retreat space" },
+  "pricesTitle": { "mn": "Тодорхой, ил тод үнэ", "en": "Clear, transparent pricing" },
+  "natureTitle": { "mn": "Байгаль чиний эмч", "en": "Nature is your healer" },
+  "reviewsTitle": { "mn": "Зочдын хэлсэн үг", "en": "What our guests say" },
+  "locationTitle": { "mn": "Манайд хэрхэн зочлон ирэх вэ?", "en": "How to visit us?" },
+  "contactTitle": { "mn": "Аяллаа эхлүүл", "en": "Start your retreat" },
+  "whyUsTitle": { "mn": "Танин мэдэхүйн мэдээлэл", "en": "Everything you need to know" },
+  "footerCta": { "mn": "Өнөөдөр аялалаа эхлүүл", "en": "Start your journey today" },
+  "footerCtaSub": { "mn": "Сэтгэлийн тайван, эрч хүч, бүтээлч сэргэлт — таныг хүлээж байна", "en": "Inner peace, renewed energy, creative revival — awaiting you" }
+},
   "social": {
     "facebook": "https://facebook.com",
     "instagram": "https://instagram.com",

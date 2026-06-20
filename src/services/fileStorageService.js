@@ -1,58 +1,55 @@
-// File storage service — development mode (base64 in localStorage).
-// Production: replace internals with Supabase Storage (see placeholder adapter).
+import { supabase } from './supabaseClient.js';
+import { getPlaceholderImage } from '../utils/imageHelpers.js';
 
-import { localAdapter } from './adapters/localAdapter.js';
-import { fileToBase64, getPlaceholderImage } from '../utils/imageHelpers.js';
+const BUCKET = 'Tushita-image';
 
-const MAX_SIZE_MB = 3;
-const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/svg+xml'];
-
-// Validate before upload. Returns { valid, error }
 export function validateImage(file) {
   if (!file) return { valid: false, error: 'Файл сонгоогүй байна' };
-  if (!ALLOWED_TYPES.includes(file.type)) {
-    return { valid: false, error: 'Зөвхөн зураг (JPG, PNG, WEBP, GIF) оруулна уу' };
+  const ALLOWED = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/svg+xml'];
+  if (!ALLOWED.includes(file.type)) {
+    return { valid: false, error: 'Зөвхөн зураг (JPG, PNG, WEBP) оруулна уу' };
   }
-  if (file.size > MAX_SIZE_MB * 1024 * 1024) {
-    return { valid: false, error: `Зургийн хэмжээ ${MAX_SIZE_MB}MB-аас бага байх ёстой` };
+  if (file.size > 5 * 1024 * 1024) {
+    return { valid: false, error: 'Зургийн хэмжээ 5MB-аас бага байх ёстой' };
   }
   return { valid: true };
 }
 
-// Upload: store base64 under a local key, return { path, url }
 export async function uploadImage(file, folder = 'general') {
   const check = validateImage(file);
   if (!check.valid) throw new Error(check.error);
 
-  const base64 = await fileToBase64(file);
-  const timestamp = Date.now();
-  const storageKey = `file_${folder}_${timestamp}`;
-  const path = `local_${folder}_${timestamp}`;
+  const ext = file.name.split('.').pop();
+  const path = `${folder}/${Date.now()}.${ext}`;
 
-  localAdapter.rawSet(storageKey, base64);
+  const { error } = await supabase.storage
+    .from(BUCKET)
+    .upload(path, file, { upsert: true });
 
-  return { path, url: base64 };
+  if (error) throw new Error(error.message);
+
+  const { data } = supabase.storage.from(BUCKET).getPublicUrl(path);
+  return { path, url: data.publicUrl };
 }
 
-// Resolve a stored path back to a displayable URL
 export function getImageUrl(path, placeholderLabel = 'Зураг') {
   if (!path) return getPlaceholderImage(placeholderLabel);
-  if (path.startsWith('http') || path.startsWith('data:')) return path;
-  if (path.startsWith('local_')) {
-    // local_{folder}_{timestamp}  ->  file_{folder}_{timestamp}
-    const storageKey = path.replace(/^local_/, 'file_');
-    const base64 = localAdapter.rawGet(storageKey);
-    return base64 || getPlaceholderImage(placeholderLabel);
-  }
-  return getPlaceholderImage(placeholderLabel);
+
+  // public/images/ дахь статик зургууд
+  if (path.startsWith('/images/')) return path;
+
+  // http URL шууд буцаана
+  if (path.startsWith('http')) return path;
+
+  // Supabase Storage path
+  const { data } = supabase.storage.from(BUCKET).getPublicUrl(path);
+  return data.publicUrl;
 }
 
-export function deleteImage(path) {
-  if (path && path.startsWith('local_')) {
-    const storageKey = path.replace(/^local_/, 'file_');
-    localAdapter.rawRemove(storageKey);
-  }
-  return true;
+export async function deleteImage(path) {
+  if (!path || path.startsWith('/images/') || path.startsWith('http')) return true;
+  const { error } = await supabase.storage.from(BUCKET).remove([path]);
+  return !error;
 }
 
 export default { uploadImage, deleteImage, getImageUrl, validateImage };

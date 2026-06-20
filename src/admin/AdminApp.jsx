@@ -13,8 +13,10 @@ import PricesEditor from './PricesEditor.jsx';
 import LocationEditor from './LocationEditor.jsx';
 import ContactEditor from './ContactEditor.jsx';
 import SocialLinksEditor from './SocialLinksEditor.jsx';
+import SocialProofEditor from './SocialProofEditor.jsx';
 import Submissions from './Submissions.jsx';
 import Analytics from './Analytics.jsx';
+import SectionTitlesEditor from './SectionTitlesEditor.jsx';
 import WhyUsEditor from './WhyUsEditor.jsx';
 import FaqEditor from './FaqEditor.jsx';
 
@@ -43,7 +45,10 @@ export default function AdminApp() {
         <Route path="whyus" element={<WhyUsEditor />} />
         <Route path="faq" element={<FaqEditor />} />
         <Route path="submissions" element={<Submissions />} />
+        <Route path="titles" element={<SectionTitlesEditor />} />
         <Route path="analytics" element={<Analytics />} />
+        <Route path="socialproof" element={<SocialProofEditor />} />
+        
       </Route>
       <Route path="*" element={<Navigate to="dashboard" replace />} />
     </Routes>

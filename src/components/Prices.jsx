@@ -32,9 +32,9 @@ export default function Prices({ prices }) {
           <h2 className="text-4xl font-extrabold text-stone-800 mb-3">
             {language === 'mn' ? 'Тодорхой, ил тод үнэ' : 'Clear, transparent pricing'}
           </h2>
-          <p className="text-stone-500">
-            {language === 'mn' ? 'Нуугдсан нэмэлт төлбөр байхгүй' : 'No hidden fees, everything included'}
-          </p>
+          {pick(prices?.subtitle) && (
+            <p className="text-stone-500">{pick(prices?.subtitle)}</p>
+           )}
         </div>
         <div className="grid md:grid-cols-3 gap-6 items-stretch">
           {items.map((pkg, idx) => {

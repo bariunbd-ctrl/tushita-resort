@@ -50,7 +50,7 @@ export default function Header({ siteName, logoPath }) {
         <a href="#home" onClick={(e) => handleNavClick(e, '#home')}
           className={`flex items-center gap-2 font-extrabold text-lg transition-colors ${scrolled ? 'text-stone-800' : 'text-white'}`}>
           {isRealLogo ? (
-            <img src={logoUrl} alt={pick(siteName)} className="h-10 w-auto object-contain" />
+            <img src={logoUrl} alt={pick(siteName)} className="h-40 w-auto object-contain" />
           ) : (
             <>
               <Mountain className={`w-7 h-7 ${scrolled ? 'text-nature-600' : 'text-nature-300'}`} />

@@ -7,7 +7,7 @@ import { trackEvent } from '../services/analyticsService.js';
 const DEFAULT_EMBED =
   'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d85000!2d101.4836!3d47.3224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smn!4v1700000000000!5m2!1sen!2smn';
 
-export default function Location({ location }) {
+export default function Location({ location, titles }) {
   const { pick, t, language } = useLanguage();
 
   const handleMapsClick = () => {
@@ -25,7 +25,7 @@ export default function Location({ location }) {
             📍 {language === 'mn' ? 'Байршил' : 'Location'}
           </div>
           <h2 className="text-4xl font-extrabold text-stone-800 mb-3">
-            {language === 'mn' ? 'Бидэн дээр хэрхэн ирэх вэ?' : 'How to find us?'}
+            {pick(titles?.locationTitle) || (language === 'mn' ? 'Бидэн дээр хэрхэн ирэх вэ?' : 'How to find us?')}
           </h2>
         </div>
 
